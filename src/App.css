@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Press Start 2P";
+}
+
+#container {
+  display: grid;
+  grid-template-columns:3fr 11fr;
+  grid-template-areas: "sidebar main";
+  width: 100vw;
+  height: 100vw;
+}
+#main {
+  grid-area: main;
+}
+#new-message {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  margin-left: 0px;
+  border-top: 1px solid #3f3f3f;
+}
+#message-list {
+  padding: 5px 0 0 5px;
+}
+#sidebar {
+  grid-area: sidebar;
+  padding: 5px 0 0 5px;
+  border-right: 1px solid #3f3f3f;
+  height: 100%;
+}
