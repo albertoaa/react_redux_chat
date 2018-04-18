@@ -1,18 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { addUser } from './actions';
-import { setupSocket } from './sockets';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'; 
+// This library is going to be use to manage side effects from the server
+// to ensure that the proper action is dispatch and not allow rare actions from the client
 
-import chat from './reducers';
+import App from './App';
+import './index.css';
+import reducers from './reducers';
+import registerServiceWorker from './registerServiceWorker';
+import handleNewMessage from './sagas';
+import username from './utils/name';
+import setupSocket from './sockets';
 
-const store = createStore(chat);
+const sagaMiddleware = createSagaMiddleware();
 
-store.dispatch(addUser('Me'));
+const store = createStore(
+  reducers,
+  applyMiddleware(sagaMiddleware)
+);
+
+const socket = setupSocket(store.dispatch, username);
+
+sagaMiddleware.run(handleNewMessage, {socket, username});
 
 ReactDOM.render(
   <Provider store={store}>
