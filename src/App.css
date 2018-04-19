@@ -15,13 +15,21 @@ body {
   grid-template-rows: 1fr 37fr 2fr;
   grid-template-areas: "sidebar header"
                        "sidebar main"
-                       "sidebar command";
+                       "footer command";
   width: 100vw;
   height: 100vh;
 }
 #main {
   grid-area: main;
   padding: 5px;
+}
+#footer {
+  grid-area: footer;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-top: 1px solid #3f3f3f;
+  border-right: 1px solid #3f3f3f;
 }
 #new-message {
   grid-area: command;

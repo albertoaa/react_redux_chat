@@ -4,6 +4,7 @@ import { AddMessage } from "./containers/AddMessage";
 import { MessagesList } from "./containers/MessagesList";
 import { Sidebar } from "./containers/Sidebar";
 import { Topbar } from "./containers/Topbar";
+import { Footer } from "./containers/Footer";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <MessagesList />
         </section>
         <AddMessage />
+        <Footer />
       </div>
     );
   }
