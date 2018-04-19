@@ -6,7 +6,7 @@ const AddMessage = (props) => {
   
   return(
     <section id="new-message">
-      <input
+      <input id="new-message-prompt"
         onKeyPress={(e) => {
           if (e.key === 'Enter') {
             props.dispatch(input.value, 'Me')
@@ -22,7 +22,7 @@ const AddMessage = (props) => {
   )
 };
 
-AddMessage.PropTypes = {
+AddMessage.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 

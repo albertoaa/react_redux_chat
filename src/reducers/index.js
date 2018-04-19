@@ -4,10 +4,12 @@
 import { combineReducers } from "redux";
 import messages from "./messages";
 import users from "./users";
+import header from "./header";
 
 const chat = combineReducers({
   messages,
-  users
+  users,
+  header
 });
 
 export default chat;

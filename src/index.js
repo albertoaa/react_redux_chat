@@ -18,6 +18,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   reducers,
+  {header: {}},
   applyMiddleware(sagaMiddleware)
 );
 
