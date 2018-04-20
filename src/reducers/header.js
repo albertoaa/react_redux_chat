@@ -5,7 +5,7 @@ import * as types from '../constants/ActionTypes';
 const messages = (state = [], action) => {
   switch (action.type) {
     case types.ADD_MESSAGE: 
-      case types.MESSAGE_RECEIVED:
+    case types.MESSAGE_RECEIVED:
       return {
         lastUserName: action.author,
         lastMessageDateTime: new Date()
