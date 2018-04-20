@@ -11,21 +11,41 @@ body {
 
 #container {
   display: grid;
-  grid-template-columns:3fr 11fr;
-  grid-template-areas: "sidebar main";
+  grid-template-columns: 3fr 11fr;
+  grid-template-rows: 1fr 37fr 2fr;
+  grid-template-areas: "sidebar header"
+                       "sidebar main"
+                       "footer command";
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
 }
 #main {
   grid-area: main;
+  padding: 5px;
+}
+#footer {
+  grid-area: footer;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-top: 1px solid #3f3f3f;
+  border-right: 1px solid #3f3f3f;
 }
 #new-message {
-  position: fixed;
-  bottom: 0;
+  grid-area: command;
   width: 100%;
+  height: 100%;
   padding: 5px;
-  margin-left: 0px;
   border-top: 1px solid #3f3f3f;
+}
+#new-message-prompt {
+  width: 100%;
+  height: 100%;
+}
+#topbar {
+  grid-area: header;
+  padding: 5px;
+  border-bottom: 1px solid black;
 }
 #message-list {
   padding: 5px 0 0 5px;
